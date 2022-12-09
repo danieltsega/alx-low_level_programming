@@ -10,6 +10,9 @@ int main(void)
 	int i;
 	int b;
 
+	i = 48;
+	b = 48;
+
 	while (b < 58)
 	{
 		i = 48;
