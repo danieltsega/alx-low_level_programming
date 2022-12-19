@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ * main - generates keygen
+ * Return: 0 always
+ */
+int main(void)
+{
+	int a = 0, b = 0;
+	time_t t;
+
+	srand((unsigned int) time(&t));
+	while (b < 2112)
+	{
+		a = rand() % 128;
+		if ((b + a) > 2772)
+			break;
+		b = b + a;
+		printf("%c", a);
+	}
+	printf("%c\n", (2772 - b));
+	return (0);
+}
