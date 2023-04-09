@@ -6,6 +6,7 @@
  * @key: a pointer that points to the index
  * @size: the size of the table
  *
+ * Return: the key index
  */
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
