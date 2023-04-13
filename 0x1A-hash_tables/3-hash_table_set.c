@@ -12,11 +12,8 @@
 hash_node_t* new_node(char *key, char *value)
 {
 	hash_node_t *node = malloc(sizeof(hash_node_t));
-	node->key = malloc(strlen(key) + 1);
-	node->value = malloc(strlen(value) + 1);
-
-	strcpy(node->key, key);
-	strcpy(node->value, value);
+	node->key = strdup(key);
+	node->value = strdup(value);
 
 	node->next = NULL;
 
@@ -37,7 +34,7 @@ hash_node_t* new_node(char *key, char *value)
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = key_index(key, ht->size);
+	unsigned long int index = key_index((unsigned char *)key, ht->size);
 	hash_node_t *node = new_node(key, value);
 	hash_node_t *current_node = ht->array[index];
 
