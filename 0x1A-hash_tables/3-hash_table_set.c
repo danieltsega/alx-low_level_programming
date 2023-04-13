@@ -9,7 +9,7 @@
  * Return: a new node
  */
 
-hash_node_t* new_node(char *key, char *value)
+hash_node_t* new_node(const char *key, const char *value)
 {
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 	node->key = strdup(key);
@@ -54,5 +54,4 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}		
 	
-	return (node);
 }
